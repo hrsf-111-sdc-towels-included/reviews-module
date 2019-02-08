@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "version": "",
+  "name": "reviews-module",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Jon Snow",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
