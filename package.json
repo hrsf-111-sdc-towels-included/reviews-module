@@ -7,7 +7,10 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build": "webpack --mode production --watch"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -16,6 +19,7 @@
     "react-dom": "^16.8.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",

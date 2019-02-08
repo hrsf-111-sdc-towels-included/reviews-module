@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import document from '../dist/index.html';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      review: 'hello world',
-    };
+    this.state = {};
   }
 
   render() {
-    const { review } = this.state;
     return (
       <div>
-        <h1>{ review }</h1>
+        <h1>hello world</h1>
       </div>
     );
   }
