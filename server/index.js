@@ -11,5 +11,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.listen(Port, () => {
+  // eslint-disable-next-line no-console
   console.log(`listening on port ${Port}`);
 });
