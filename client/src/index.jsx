@@ -10,12 +10,14 @@ class App extends React.Component {
   }
 
   render() {
+    const { review } = this.state;
     return (
       <div>
-        <h1>{this.state.review}</h1>
+        <h1>{ review }</h1>
       </div>
     );
   }
 }
 
+// eslint-disable-next-line no-undef
 ReactDOM.render(<App />, document.getElementById('app'));
