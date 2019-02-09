@@ -3,22 +3,18 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const getReviews = function(serverCallback) {
-    let query = 'SELECT * FROM Reviews';
-    let sqlCb = (err, dbData) => {
-      if (err) {
-        throw err;
-        return
-      } else {
-        console.log('dbdata', dbData)
-        serverCallback(null, dbData)
-      }
+const getReviews = (serverCallback) => {
+  const query = 'SELECT * FROM Reviews';
+  const sqlCb = (err, dbData) => {
+    if (err) {
+      throw err;
+    } else {
+      console.log('dbdata', dbData);
+      serverCallback(null, dbData);
     }
-    connection.query(query, sqlCb)
-  }
-
-
-
+  };
+  connection.query(query, sqlCb);
+};
 module.exports = {
-    getReviews
+  getReviews,
 };
