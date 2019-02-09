@@ -28,12 +28,18 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ## Development
 
-### Installing Dependencies
+### Running the app
 
 From within the root directory:
 
 ```sh
+switch branch to Basic_client/server/webpack
+
 npm install -g webpack
+npm install -g nodemon
 npm install
+
+npm run build,
+npm start
+Go to localhost:3004
 ```
-      
