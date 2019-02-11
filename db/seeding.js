@@ -30,7 +30,7 @@ const randomInsertGenerator = (number) => {
 
   for (let i = 0; i <= number; i += 1) {
     const insertStr = `INSERT INTO Reviews (${reviewsColumns.join(', ')})
-      VALUES (${getRandomNum()}, ${getRandomHomeId()}, 5, 5, 5, 5, 5, 5, false, '${latinStr}', '2008-7-04')`;
+      VALUES (${getRandomNum()}, ${getRandomHomeId()}, ${getRandomHomeId()}, ${getRandomHomeId()}, ${getRandomHomeId()}, ${getRandomHomeId()}, ${getRandomHomeId()}, ${getRandomHomeId()}, false, '${latinStr}', '2008-7-04')`;
     stringsToWrite.push(insertStr);
   }
   stringsToWrite = stringsToWrite.join('\n\n');

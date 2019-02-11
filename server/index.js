@@ -18,6 +18,7 @@ app.get('/api/reviews', (req, res) => {
     } else {
       console.log(reviews);
       res.send(reviews);
+      res.end();
     }
   });
 });
