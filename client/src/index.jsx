@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import document from '../dist/index.html';
+import axios from 'axios';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      reviewsTotal: 1,
+    };
   }
 
+  componentDidMount() {
+    axios.get(`/api/reviews`)
+     .then(res => {
+       console.log(res.data.length);
+       var total = res.data.length;
+       this.setState({reviewsTotal: total})
+     })
+  }
   render() {
     return (
       <div>
-        <h1>hello world</h1>
+        <h1>
+          {this.state.reviewsTotal} Reviews
+        </h1>
       </div>
     );
   }
