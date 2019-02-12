@@ -14,6 +14,7 @@ class App extends React.Component {
         <h1>
           <TotalReviews />
         </h1>
+        
       </div>
     );
   }

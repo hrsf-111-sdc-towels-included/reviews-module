@@ -46,13 +46,6 @@ class TotalReviews extends React.Component {
         reviewCheckIn /= res.data.length;
         reviewValue /= res.data.length;
         reviewAverage = (reviewAccuracy + reviewCommunication + reviewCleanliness + reviewLocation + reviewCheckIn + reviewValue) / 6;
-        console.log(reviewAccuracy);
-        console.log(reviewCommunication);
-        console.log(reviewCleanliness);
-        console.log(reviewLocation);
-        console.log(reviewCheckIn);
-        console.log(reviewValue);
-        console.log(reviewAverage);
         this.setState({
           rating: reviewAverage,
         });
