@@ -58,6 +58,11 @@ class TotalReviews extends React.Component {
         <h1>
           {this.state.reviewsTotal} Reviews {this.state.rating}
         </h1>
+        <div className="stars">
+          <div className="outer-stars">
+            <div className="inner-stars"></div>
+          </div>
+        </div>
       </div>
     );
   }
