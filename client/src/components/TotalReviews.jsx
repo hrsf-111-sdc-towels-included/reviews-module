@@ -14,8 +14,6 @@ class TotalReviews extends React.Component {
   componentDidMount() {
     axios.get('/api/reviews')
       .then((res) => {
-        console.log('we made it to the first promise');
-        console.log(res.data);
         const totalReviews = res.data.length;
         this.setState({
           reviewsTotal: totalReviews,
