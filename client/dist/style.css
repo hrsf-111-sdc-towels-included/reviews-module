@@ -1,4 +1,4 @@
-/* .stars-outer {
+.stars-outer {
   position: relative;
   display: inline-block;
 }
@@ -22,5 +22,9 @@
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #008080;
-} */
-
+}
+.IndependentTitle {
+  font-family: sans-serif;
+}
+/* 
+Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */

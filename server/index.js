@@ -16,7 +16,6 @@ app.get('/api/reviews', (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(reviews);
       res.send(reviews);
       res.end();
     }

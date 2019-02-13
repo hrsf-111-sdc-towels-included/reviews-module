@@ -13,12 +13,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>
+        <div>
           <TotalReviews />
-        </h1>
-        <h2>
+        </div>
+        <div>
           <IndependentReviews />
-        </h2>
+        </div>
       </div>
     );
   }

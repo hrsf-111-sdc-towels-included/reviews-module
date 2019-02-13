@@ -1,108 +1,110 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 import Axios from 'axios';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-const StarsOuter = styled.div`
-    position: relative;
-    display: inline-block;
-    &:before {
-      content: "\f005 \f005 \f005 \f005 \f005";
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-      color: #ccc;
-    }
-`;
+// const StarsOuter = styled.div`
+//     position: relative;
+//     display: inline-block;
+//     &:before {
+//       content: "\f005 \f005 \f005 \f005 \f005";
+//       font-family: 'Font Awesome 5 Free';
+//       font-weight: 900;
+//       color: #ccc;
+//     }
+// `;
 
-const Accuracy = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const Accuracy = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
 
-const Location = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const Location = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 20%;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
 
-const Communication = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const Communication = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 30%;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
 
-const CheckIn = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const CheckIn = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
 
-const Cleanliness = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const Cleanliness = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
 
-const Value = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  &:before {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #008080;
-  }
-`;
+// const Value = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   width: 0;
+//   &:before {
+//     content: "\f005 \f005 \f005 \f005 \f005";
+//     font-family: 'Font Awesome 5 Free';
+//     font-weight: 900;
+//     color: #008489;
+//   }
+// `;
+
+
 class IndependentReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -117,6 +119,10 @@ class IndependentReviews extends React.Component {
   }
 
   componentDidMount() {
+    this.setCharAt = (str, index, chr) => {
+      if (index > str.length - 1) return str;
+      return str.substr(0, index) + chr + str.substr(index + 1);
+    };
     Axios.get('/api/reviews')
       .then((res) => {
         let independentAccuracy = 0;
@@ -154,14 +160,12 @@ class IndependentReviews extends React.Component {
           console.log('what state am i stuck on?', catagories);
           const starPersentage = (this.state[catagories] / 5 ) * 100;
           const starPersentageRounded = (`${Math.round(starPersentage / 10) * 10}%`);
-          console.log(Accuracy.componentStyle.rules);
-          //document.querySelector(`.${catagories}`).style.width = starPersentageRounded;
+          document.querySelector(`#${catagories}`).style.width = starPersentageRounded;
         }
         return res;
       })
       .catch(console.log('there was an error'));
   }
-
 
   render() {
     return (
@@ -169,50 +173,50 @@ class IndependentReviews extends React.Component {
         <table className="table table-striped">
           <tbody>
             <tr className="rowOne">
-              <td>Accuracy</td>
+              <td className="IndependentTitle">Accuracy</td>
               <td>
-                <StarsOuter>
-                  <Accuracy />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="Accuracy" />
+                </div>
                 <span className="number-rating"></span>
               </td>
               <td>Location</td>
               <td>
-                <StarsOuter>
-                  <Location />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="Location" />
+                </div>
                 <span className="number-rating"></span>
               </td>
             </tr>
             <tr className="rowTwo">
               <td>Communication</td>
               <td>
-                <StarsOuter>
-                  <Communication />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="Communication" />
+                </div>
                 <span className="number-rating"></span>
               </td>
               <td>Check-in</td>
               <td>
-                <StarsOuter>
-                  <CheckIn />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="CheckIn" />
+                </div>
                 <span className="number-rating"></span>
               </td>
             </tr>
             <tr className="rowThree">
               <td>Cleanliness</td>
               <td>
-                <StarsOuter>
-                  <Cleanliness />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="Cleanliness" />
+                </div>
                 <span className="number-rating"></span>
               </td>
               <td>Value</td>
               <td>
-                <StarsOuter>
-                  <Value />
-                </StarsOuter>
+                <div className="stars-outer">
+                  <div className="stars-inner" id="Value" />
+                </div>
                 <span className="number-rating"></span>
               </td>
             </tr>
@@ -222,5 +226,10 @@ class IndependentReviews extends React.Component {
     );
   }
 }
+//  setCharAt (str, index, chr) => {
+//   if (index > str.length - 1) return str;
+//   return str.substr(0, index) + chr + str.substr(index + 1);
+// }
 
 export default IndependentReviews;
+
