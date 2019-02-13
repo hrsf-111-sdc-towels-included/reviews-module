@@ -9,15 +9,16 @@ class App extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div>
-        <h1>
+        <div>
           <TotalReviews />
-        </h1>
-        <h2>
+        </div>
+        <div>
           <IndependentReviews />
-        </h2>
+        </div>
       </div>
     );
   }

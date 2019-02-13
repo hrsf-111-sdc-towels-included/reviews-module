@@ -47,6 +47,9 @@ class TotalReviews extends React.Component {
         this.setState({
           rating: reviewAverage,
         });
+        const starPersentage = (this.state.rating / 5) * 100;
+        const starPersentageRounded = (`${Math.round(starPersentage / 10) * 10}%`);
+        document.querySelector(`#total`).style.width = starPersentageRounded;
         return res;
       })
       .catch(console.log('there was an error'));
@@ -55,9 +58,15 @@ class TotalReviews extends React.Component {
   render() {
     return (
       <div>
-        <h1>
-          {this.state.reviewsTotal} Reviews {this.state.rating}
-        </h1>
+        <div>
+          {this.state.reviewsTotal}
+          Reviews
+          <div className="stars">
+            <div className="stars-outer">
+              <div className="stars-inner" id="total" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
