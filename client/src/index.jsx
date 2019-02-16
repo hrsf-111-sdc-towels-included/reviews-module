@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 
 import TotalReviews from './components/TotalReviews.jsx';
 import IndependentReviews from './components/IndependentReviews.jsx';
+import Search from './components/Search.jsx';
+import Order from './components/Order.jsx';
+import CommentsBlock from './components/CommentsBlock.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +21,13 @@ class App extends React.Component {
         </div>
         <div>
           <IndependentReviews />
+        </div>
+        <div className="search-container">
+          <Search />
+          <Order />
+        </div>
+        <div>
+          <CommentsBlock />
         </div>
       </div>
     );

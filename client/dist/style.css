@@ -28,3 +28,67 @@
 }
 /* 
 Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
+
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+}
+.total {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search input {
+  text-indent: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 5px;
+  color: #484848;
+}
+
+.commentTop {
+  display: flex;
+  justify-content: space-between;
+  top: 16px;
+  bottom: 16px;
+}
+
+.flag {
+  height: 15px;
+}
+.magnifyingGlass {
+  position: absolute;
+  display:inline-block;
+  left: 10px;
+  top: 194px;
+}
+
+.magnifyingGlass::before {
+  content: "\f002";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+  color: lightgray;
+}
+
+.sort {
+  width: 175px;
+  height: 33px;
+  border: 1px solid lightgray;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  outline: none;
+  color: #484848;
+ }
+.sort:focus {
+  border: 1px solid rgb(41, 126, 113);
+}
+.sort option {
+  width: 175px;
+  height: 33px;
+  color: lightgray;
+}
+

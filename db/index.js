@@ -15,6 +15,21 @@ const getReviews = (callback) => {
   };
   connection.query(query, sqlCb);
 };
+
+const getAuthors = (callback) => {
+  const query = 'select * from Authors';
+  const sqlCb = (err, authors) => {
+    if (err) {
+      console.log(err);
+    } else {
+      callback(null, authors);
+    }
+  };
+  connection.query(query, sqlCb);
+};
+
+
 module.exports = {
   getReviews,
+  getAuthors,
 };
