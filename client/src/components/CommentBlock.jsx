@@ -55,14 +55,18 @@ class CommentBlock extends React.Component {
     return (
       <div>
         <div className="commentTop">
-          <div className="picContainer">
-            <img className="profilePic" src={this.state.authorPic[0]} alt="" />
+          <div className="leftItems">
+            <div className="picContainer">
+              <img className="profilePic" src={this.state.authorPic[0]} alt="" />
+            </div>
+            <div className="commentInfoContainer">
+              <div className="authorName">{this.state.authorName[0]}</div>
+              <div className="dateCss">{month[m - 1]} {y}</div>
+            </div>
           </div>
-          <div className="commentInfoContainer">
-            <div>{this.state.authorName[0]}</div>
-            <div>{month[m - 1]} {y}</div>
+          <div className="rightItems">
+            <img className="flag" src="http://download.seaicons.com/icons/icons8/ios7/512/Very-Basic-Flag-icon.png" alt="" />
           </div>
-          <img className="flag" src="http://download.seaicons.com/icons/icons8/ios7/512/Very-Basic-Flag-icon.png" alt="" />
         </div>
         <div className="comment">
           <div>{this.state.reviews[0]}</div>

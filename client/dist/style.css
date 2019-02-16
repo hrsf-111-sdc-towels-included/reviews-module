@@ -60,6 +60,7 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
 
 .flag {
   height: 15px;
+  left: 80%;
 }
 .magnifyingGlass {
   position: absolute;
@@ -97,4 +98,29 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   border-radius: 100px;
   height: 48px;
   width: 48px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.leftItems {
+  display: inline-flex;
+}
+
+.authorName {
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.375em !important;
+  color: #484848 !important;
+}
+
+.dateCss {
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.2857142857142858em !important;
+  color: #484848 !important;
 }
