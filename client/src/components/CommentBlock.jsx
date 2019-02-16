@@ -50,7 +50,7 @@ class CommentBlock extends React.Component {
     return (
       <div>
         <div className="commentTop">
-          <img src={this.state.authorPic[0]} alt="" />
+          <img className="profilePic" src={this.state.authorPic[0]} alt="" />
           <img className="flag" src="http://download.seaicons.com/icons/icons8/ios7/512/Very-Basic-Flag-icon.png" alt="" />
         </div>
         <div className="comment">

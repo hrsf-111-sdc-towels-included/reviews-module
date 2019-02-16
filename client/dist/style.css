@@ -91,4 +91,8 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   height: 33px;
   color: lightgray;
 }
-
+.profilePic {
+  border-radius: 100px;
+  height: 48px;
+  width: 48px;
+}
