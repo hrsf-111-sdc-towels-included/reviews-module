@@ -60,7 +60,7 @@ class TotalReviews extends React.Component {
       <div>
         <div className="total">
           {this.state.reviewsTotal}
-          Reviews
+          <div className="title">Reviews</div>
           <div className="stars">
             <div className="stars-outer">
               <div className="stars-inner" id="total" />

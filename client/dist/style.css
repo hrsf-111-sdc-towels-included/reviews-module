@@ -24,7 +24,13 @@
   color: #008080;
 }
 .IndependentTitle {
-  font-family: sans-serif;
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.375em !important;
+  color: #484848 !important;
 }
 /* 
 Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
@@ -123,4 +129,17 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-weight: 400 !important;
   line-height: 1.2857142857142858em !important;
   color: #484848 !important;
+}
+.comment {
+  margin: 0px !important;
+  word-wrap: break-word !important;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.375em !important;
+  color: #484848 !important;
+}
+.title {
+  margin-left: 5px;
+  margin-right: 15px;
 }
