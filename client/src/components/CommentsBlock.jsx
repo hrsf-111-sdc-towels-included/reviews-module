@@ -26,6 +26,7 @@ class CommentsBlock extends React.Component {
   render() {
     return (
       <div>
+        <hr Style="margin-top: 24px; margin-bottom: 24px" />
         <CommentBlock />
         <hr Style="margin-top: 24px; margin-bottom: 24px" />
         <CommentBlock />

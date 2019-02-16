@@ -169,7 +169,7 @@ class IndependentReviews extends React.Component {
   render() {
     return (
       <div className="container">
-        <table className="table table-striped">
+        <table className="table table-sm">
           <tbody>
             <tr className="rowOne">
               <td className="IndependentTitle">Accuracy</td>
