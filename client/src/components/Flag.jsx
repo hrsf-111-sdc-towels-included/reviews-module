@@ -67,7 +67,6 @@ class Flag extends React.Component {
               <hr Style="margin-top: 24px; margin-bottom: 24px" />
             </section>
           </div>
-  
         </Modal>
       </div>
     );
