@@ -10,7 +10,10 @@ import CommentsBlock from './components/CommentsBlock.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      sort: 'relevant',
+      reviewPage: 1,
+    };
   }
 
   render() {
@@ -24,7 +27,7 @@ class App extends React.Component {
         </div>
         <div className="search-container">
           <Search />
-          <Order />
+          <Order sort={this.props.sort} handleSort={this.handleSort} />
         </div>
         <div>
           <CommentsBlock />
