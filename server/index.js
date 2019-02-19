@@ -22,19 +22,19 @@ app.get('/api/reviews', (req, res) => {
   });
 });
 
+app.get('/api/authors', (req, res) => {
+  db.getAuthors((err, authors) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(authors);
+      res.end();
+    }
+  });
+});
+
 
 app.listen(Port, () => {
   // eslint-disable-next-line no-console
   console.log(`listening on port ${Port}`);
 });
-
-// app.get('/api/amenities', (req, res) => {
-//   db.getAmenenities((err, amenData) => {
-//     if (err) {
-//       throw err;
-//     } else {
-//       const stringedAmenData = JSON.stringify(amenData);
-//       res.end(stringedAmenData);
-//     }
-//   });
-// });

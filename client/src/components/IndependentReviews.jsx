@@ -29,82 +29,6 @@ import Axios from 'axios';
 //   }
 // `;
 
-// const Location = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   width: 20%;
-//   &:before {
-//     content: "\f005 \f005 \f005 \f005 \f005";
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #008489;
-//   }
-// `;
-
-// const Communication = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 30%;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   width: 0;
-//   &:before {
-//     content: "\f005 \f005 \f005 \f005 \f005";
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #008489;
-//   }
-// `;
-
-// const CheckIn = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   width: 0;
-//   &:before {
-//     content: "\f005 \f005 \f005 \f005 \f005";
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #008489;
-//   }
-// `;
-
-// const Cleanliness = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   width: 0;
-//   &:before {
-//     content: "\f005 \f005 \f005 \f005 \f005";
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #008489;
-//   }
-// `;
-
-// const Value = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   width: 0;
-//   &:before {
-//     content: "\f005 \f005 \f005 \f005 \f005";
-//     font-family: 'Font Awesome 5 Free';
-//     font-weight: 900;
-//     color: #008489;
-//   }
-// `;
-
-
 class IndependentReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -157,7 +81,6 @@ class IndependentReviews extends React.Component {
       })
       .then((res) => {
         for (const catagories in this.state) {
-          console.log('what state am i stuck on?', catagories);
           const starPersentage = (this.state[catagories] / 5 ) * 100;
           const starPersentageRounded = (`${Math.round(starPersentage / 10) * 10}%`);
           document.querySelector(`#${catagories}`).style.width = starPersentageRounded;
@@ -170,7 +93,7 @@ class IndependentReviews extends React.Component {
   render() {
     return (
       <div className="container">
-        <table className="table table-striped">
+        <table className="table table-sm">
           <tbody>
             <tr className="rowOne">
               <td className="IndependentTitle">Accuracy</td>
@@ -178,14 +101,12 @@ class IndependentReviews extends React.Component {
                 <div className="stars-outer">
                   <div className="stars-inner" id="Accuracy" />
                 </div>
-                <span className="number-rating"></span>
               </td>
               <td>Location</td>
               <td>
                 <div className="stars-outer">
                   <div className="stars-inner" id="Location" />
                 </div>
-                <span className="number-rating"></span>
               </td>
             </tr>
             <tr className="rowTwo">
@@ -194,14 +115,12 @@ class IndependentReviews extends React.Component {
                 <div className="stars-outer">
                   <div className="stars-inner" id="Communication" />
                 </div>
-                <span className="number-rating"></span>
               </td>
               <td>Check-in</td>
               <td>
                 <div className="stars-outer">
                   <div className="stars-inner" id="CheckIn" />
                 </div>
-                <span className="number-rating"></span>
               </td>
             </tr>
             <tr className="rowThree">
@@ -210,14 +129,12 @@ class IndependentReviews extends React.Component {
                 <div className="stars-outer">
                   <div className="stars-inner" id="Cleanliness" />
                 </div>
-                <span className="number-rating"></span>
               </td>
               <td>Value</td>
               <td>
                 <div className="stars-outer">
                   <div className="stars-inner" id="Value" />
                 </div>
-                <span className="number-rating"></span>
               </td>
             </tr>
           </tbody>
@@ -226,10 +143,6 @@ class IndependentReviews extends React.Component {
     );
   }
 }
-//  setCharAt (str, index, chr) => {
-//   if (index > str.length - 1) return str;
-//   return str.substr(0, index) + chr + str.substr(index + 1);
-// }
+
 
 export default IndependentReviews;
-

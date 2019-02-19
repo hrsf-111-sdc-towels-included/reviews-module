@@ -137,11 +137,11 @@ INSERT INTO Homes (name) values ('10 Linda LaneManchester, NH 03102');
 
 
 
-INSERT INTO Authors (name, img_url) VALUES ('Jon Snow','https://goo.gl/images/tcquvV');
-INSERT INTO Authors (name, img_url) VALUES ('Daenerys Targeryen', 'https://goo.gl/images/9nqBFQ');
-INSERT INTO Authors (name, img_url) VALUES ('Tyrion Lannister', 'https://goo.gl/images/zv5MWD');
-INSERT INTO Authors (name, img_url) VALUES ('Sansa Stark', 'https://goo.gl/images/U3bhvH');
-INSERT INTO Authors (name, img_url) VALUES ('Khal Drogo', 'https://goo.gl/images/TJfMuz');
+INSERT INTO Authors (name, img_url) VALUES ('Jon Snow','https://s3-us-west-1.amazonaws.com/profile-pics-reviews/Jon_Snow-Kit_Harington.jpg');
+INSERT INTO Authors (name, img_url) VALUES ('Daenerys Targeryen', 'https://s3-us-west-1.amazonaws.com/profile-pics-reviews/Daenerys_Targaryen_with_Dragon-Emilia_Clarke.jpg');
+INSERT INTO Authors (name, img_url) VALUES ('Tyrion Lannister', 'https://s3-us-west-1.amazonaws.com/profile-pics-reviews/Tyrion_Lannister-Peter_Dinklage.jpg');
+INSERT INTO Authors (name, img_url) VALUES ('Sansa Stark', 'https://s3-us-west-1.amazonaws.com/profile-pics-reviews/SophieTurnerasSansaStark.jpg');
+INSERT INTO Authors (name, img_url) VALUES ('Khal Drogo', 'https://s3-us-west-1.amazonaws.com/profile-pics-reviews/Khal_Drogo-Jason_Momoa.jpg');
 
 
 INSERT INTO Reviews (author_id, home_id, accuracy, communication, cleanliness, location, check_in, value, complaints, comment, created_at)
