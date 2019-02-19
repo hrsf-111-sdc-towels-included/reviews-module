@@ -65,8 +65,14 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
 }
 
 .flag {
-  height: 15px;
-  left: 80%;
+  height: 1em;
+  width: 1em;
+  display: block;
+  fill: rgb(118, 118, 118);
+}
+.flagContainer {
+  display: flex;
+  justify-content: right;
 }
 .magnifyingGlass {
   position: absolute;
@@ -109,6 +115,10 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
 }
 .leftItems {
   display: inline-flex;
+}
+.rightItems {
+  display: block;
+  justify-content: right;
 }
 
 .authorName {
@@ -163,7 +173,7 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   top: 50%;
   left: 50%;
   height: 600px;
-  min-width: 400px;
+  min-width: 600px;
   font-size: 50px;
   color: white;
   transform: translate(-50%,-50%);
@@ -180,16 +190,19 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   color: #484848 !important;
   padding-top: 2px !important;
   padding-bottom: 2px !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 .modalDescription {
-  margin: 0px !important;
+  margin-top: 15px !important;
+  margin-bottom: 20px !important;
   word-wrap: break-word !important;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-size: 16px !important;
   font-weight: 400 !important;
   line-height: 1.375em !important;
   color: #484848 !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 .inapproproateContent {
@@ -201,16 +214,9 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   color: rgb(72, 72, 72) !important;
   font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
 }
-.complaint {
-  font-weight: normal !important;
-  font-size: 14px !important;
-  line-height: 18px !important;
-  letter-spacing: normal !important;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-  color: rgb(72, 72, 72) !important;
-  padding-top: 4px !important;
-}
+
 .fakeContent {
   display: flex;
   justify-content: space-between;
@@ -220,6 +226,7 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   color: rgb(72, 72, 72) !important;
   font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
 }
 .dishonest {
   display: flex;
@@ -230,4 +237,43 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   color: rgb(72, 72, 72) !important;
   font-weight: normal !important;
+  -webkit-font-smoothing: antialiased;
+}
+.complaint {
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  letter-spacing: normal !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  color: rgb(72, 72, 72) !important;
+  padding-top: 4px !important;
+  -webkit-font-smoothing: antialiased;
+}
+.totalModal {
+  padding: 32px !important;
+}
+
+.complaintsContainer {
+  padding-left: 0px;
+  width: 100%;
+}
+
+.exit {
+  display: block;
+  margin-bottom: 48px !important;
+  cursor: pointer !important;
+  background-color: transparent !important;
+  border-width: 0px !important;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  height: 16px;
+  width: 16px;
+  font-size: 50%;
+  color: gray;
+  /* color: rgb(118, 118, 118); */
+}
+.exitDesign {
+  height: 16px;
+  width: 16px;
+  display: block;
+  fill: rgb(118, 118, 118);
 }
