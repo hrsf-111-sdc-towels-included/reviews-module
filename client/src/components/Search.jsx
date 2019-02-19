@@ -13,7 +13,7 @@ class Search extends React.Component {
       <div>
         <div className="search">
           <span className="magnifyingGlass" />
-          <input placeholder="Search reviews" />
+          <input placeholder="Search review" />
         </div>
       </div>
     );

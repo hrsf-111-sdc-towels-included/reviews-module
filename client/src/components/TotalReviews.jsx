@@ -59,7 +59,9 @@ class TotalReviews extends React.Component {
     return (
       <div>
         <div className="total">
-          {this.state.reviewsTotal}
+          <div className="reviewTotal">
+            {this.state.reviewsTotal}
+          </div>
           <div className="title">Reviews</div>
           <div className="stars">
             <div className="stars-outer">
