@@ -54,7 +54,7 @@ class Flag extends React.Component {
                 </div>
                 <p className="complaint">This review contains violent, graphic, promotional, or otherwise offensive content.</p>
               </label>
-              <hr Style="margin-top: 24px; margin-bottom: 24px" />
+              <hr Style="margin-top: 12px; margin-bottom: 12px" />
               <label className="complaintsContainer">
                 <div className="dishonest">
                   Dishonest or hateful content
@@ -62,7 +62,7 @@ class Flag extends React.Component {
                 </div>
                 <p className="complaint">This review is purposefully malicious and assaulting.</p>
               </label>
-              <hr Style="margin-top: 24px; margin-bottom: 24px" />
+              <hr Style="margin-top: 12px; margin-bottom: 12px" />
               <label className="complaintsContainer">
                 <div className="fakeContent">
                   Fake content
@@ -70,7 +70,8 @@ class Flag extends React.Component {
                 </div>
                 <p className="complaint">This review contains false information or may be fake.</p>
               </label>
-              <hr Style="margin-top: 24px; margin-bottom: 24px" />
+              <hr Style="margin-top: 12px; margin-bottom: 12px" />
+              <button type="button" onClick={console.log("I'm not supposed to work yet")}>Submit</button>
             </section>
           </div>
         </Modal>
