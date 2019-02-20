@@ -13,7 +13,6 @@ import Axios from 'axios';
 //       color: #ccc;
 //     }
 // `;
-
 // const Accuracy = styled.div`
 //   position: absolute;
 //   top: 0;
@@ -39,6 +38,7 @@ class IndependentReviews extends React.Component {
       CheckIn: 0,
       Cleanliness: 0,
       Value: 0,
+      homeId: this.props.homeId
     };
   }
 
@@ -47,7 +47,7 @@ class IndependentReviews extends React.Component {
       if (index > str.length - 1) return str;
       return str.substr(0, index) + chr + str.substr(index + 1);
     };
-    Axios.get('/api/reviews')
+    Axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         let independentAccuracy = 0;
         let independentLocation = 0;

@@ -8,11 +8,12 @@ class TotalReviews extends React.Component {
     this.state = {
       reviewsTotal: 1,
       rating: 0,
+      homeId: this.props.homeId,
     };
   }
 
   componentDidMount() {
-    axios.get('/api/reviews')
+    axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         const totalReviews = res.data.length;
         this.setState({

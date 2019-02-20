@@ -10,11 +10,12 @@ class CommentBlock extends React.Component {
       authorPic: [],
       reviews: [],
       date: [],
+      homeId: this.props.homeId,
     };
   }
 
   componentDidMount() {
-    axios.get('/api/reviews')
+    axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         const reviewsArray = [];
         const dateArray = [];
