@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       sort: 'relevant',
       reviewPage: 1,
+      homeId: 120,
     };
   }
 
@@ -20,17 +21,17 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <TotalReviews />
+          <TotalReviews homeId={this.state.homeId} />
         </div>
         <div>
-          <IndependentReviews />
+          <IndependentReviews homeId={this.state.homeId} />
         </div>
         <div className="search-container">
           <Search />
           <Order sort={this.props.sort} handleSort={this.handleSort} />
         </div>
         <div>
-          <CommentsBlock />
+          <CommentsBlock homeId={this.state.homeId} />
         </div>
       </div>
     );
