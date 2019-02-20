@@ -11,10 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-app.get('/api/reviews', (req, res) => {
-  db.getReviews((err, reviews) => {
+app.get('/api/reviews/:homeId', (req, res) => {
+  console.log("this is my target", req.params.homeId);
+  db.getReviews(req.params.homeId, (err, reviews) => {
     if (err) {
-      console.log(err);
+      console.log("We have a server problem", err);
     } else {
       res.send(reviews);
       res.end();

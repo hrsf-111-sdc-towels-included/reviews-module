@@ -7,11 +7,12 @@ class CommentsBlock extends React.Component {
     super(props);
     this.state = {
       comments: [],
+      homeId: this.props.homeId,
     };
   }
 
   componentDidMount() {
-    axios.get('/api/reviews')
+    axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         const commentsArray = [];
         for (let i = 0; i < res.data.length; i += 1) {
@@ -26,21 +27,21 @@ class CommentsBlock extends React.Component {
   render() {
     return (
       <div>
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId} />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId}/>
+        <hr style={{marginTop:24, marginBottom: 24}} />
       </div>
     );
   }

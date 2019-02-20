@@ -3,8 +3,8 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const getReviews = (callback) => {
-  const query = 'SELECT * FROM Reviews';
+const getReviews = (homeId, callback) => {
+  const query = 'SELECT * FROM Reviews WHERE Reviews.home_id = ?';
   const sqlCb = (err, reviews) => {
     if (err) {
       console.log(err);
@@ -13,7 +13,7 @@ const getReviews = (callback) => {
       callback(null, reviews);
     }
   };
-  connection.query(query, sqlCb);
+  connection.query(query, [homeId], sqlCb);
 };
 
 const getAuthors = (callback) => {
