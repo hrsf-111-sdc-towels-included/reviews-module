@@ -27,21 +27,21 @@ class CommentsBlock extends React.Component {
   render() {
     return (
       <div>
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
         <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
-        <CommentBlock homeId={this.state.homeId} />
-        <hr Style="margin-top: 24px; margin-bottom: 24px" />
+        <hr style={{marginTop:24, marginBottom: 24}} />
+        <CommentBlock homeId={this.state.homeId}/>
+        <hr style={{marginTop:24, marginBottom: 24}} />
       </div>
     );
   }
