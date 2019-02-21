@@ -9,6 +9,12 @@ const Port = 3004;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/api/reviews/:homeId', (req, res) => {
@@ -23,7 +29,7 @@ app.get('/api/reviews/:homeId', (req, res) => {
   });
 });
 
-app.get('/api/authors', (req, res) => {
+app.get('/api/author/:homeId', (req, res) => {
   db.getAuthors((err, authors) => {
     if (err) {
       console.log(err);

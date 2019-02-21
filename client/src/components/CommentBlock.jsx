@@ -28,7 +28,7 @@ class CommentBlock extends React.Component {
           date: dateArray,
         });
       });
-    axios.get('/api/authors')
+    axios.get(`Http://localhost:3004/Api/author/${this.state.homeId}`)
       .then((res) => {
         const authorNameArray = [];
         const authorPicArray = [];
