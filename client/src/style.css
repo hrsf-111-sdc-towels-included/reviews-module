@@ -92,7 +92,7 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   position: absolute;
   display: inline-block;
   left: 10px;
-  top: 170px;
+  top: 1000px;
 }
 
 .magnifyingGlass::before {
