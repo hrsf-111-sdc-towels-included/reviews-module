@@ -18,7 +18,6 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.get('/api/reviews/:homeId', (req, res) => {
-  console.log("this is my target", req.params.homeId);
   db.getReviews(req.params.homeId, (err, reviews) => {
     if (err) {
       console.log("We have a server problem", err);

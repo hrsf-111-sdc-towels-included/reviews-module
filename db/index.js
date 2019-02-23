@@ -9,7 +9,6 @@ const getReviews = (homeId, callback) => {
     if (err) {
       console.log(err);
     } else {
-      console.log('dbdata', reviews);
       callback(null, reviews);
     }
   };

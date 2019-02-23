@@ -15,7 +15,7 @@ class CommentBlock extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
+    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         const reviewsArray = [];
         const dateArray = [];
@@ -28,7 +28,7 @@ class CommentBlock extends React.Component {
           date: dateArray,
         });
       });
-    axios.get(`Http://localhost:3004/Api/author/${this.state.homeId}`)
+    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.comdock/Api/author/${this.state.homeId}`)
       .then((res) => {
         const authorNameArray = [];
         const authorPicArray = [];
@@ -45,11 +45,9 @@ class CommentBlock extends React.Component {
 
   render() {
     const desiredDate = new Date(this.state.date[0]);
-    // const monthName = new Intl.DateTimeFormat("en-US", { month: "long" }).format;
     const month = ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const m = desiredDate.getMonth();
     const y = desiredDate.getFullYear();
-    // console.log(monthName(desiredDate));
     return (
       <div>
         <div className="commentTop">

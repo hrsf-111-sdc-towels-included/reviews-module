@@ -6,6 +6,7 @@
 .stars-outer {
   position: relative;
   display: inline-block;
+  z-index: -1;
 }
 
 .stars-inner {
@@ -58,17 +59,26 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-size: var(--font-form-element-small-font-size, 14px) !important;
   line-height: var(--font-form-element-small-line-height, 22px) !important;
   font-family: var(--font-form-element-small-font-family, Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif) !important;
-  border: 1px solid rgb(0, 0, 0, .1);
-  border-radius: 5px;
   color: #484848 !important;
+  border-color: transparent !important;
+  border-width: 20px;
   font-weight: var(--font-book-font-weight, 600) !important;
   text-transform: var(--font-form-element-small-text-transform, undefined) !important;
   letter-spacing: var(--font-form-element-small-letter-spacing, normal) !important;
+  -webkit-font-smoothing: antialiased
+}
+.left-search-container {
+  display: inline;
+  justify-content: start;
+  border: 1px solid rgb(0, 0, 0, .1);
+  border-radius: 5px;
   padding-top: var(--spacing-form-element-small-vertical, 6px) !important;
   padding-bottom: var(--spacing-form-element-small-vertical, 6px) !important;
   padding-left: var(--spacing-form-element-small-horizontal, 7px) !important;
   padding-right: var(--spacing-form-element-small-horizontal, 7px) !important;
-  -webkit-font-smoothing: antialiased
+}
+.left-search-container input {
+  border-color: transparent;
 }
 
 .commentTop {
@@ -89,18 +99,11 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   justify-content: right;
 }
 .magnifyingGlass {
-  position: absolute;
-  display: inline-block;
-  left: 10px;
-  top: 1000px;
+  height: 1em;
+  width: 1em;
+  fill: rgb(72, 72, 72);
 }
 
-.magnifyingGlass::before {
-  content: "\f002";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 600;
-  color: lightgray;
-}
 
 .sort {
   width: 175px;
@@ -111,7 +114,7 @@ Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif */
   font-size: 12px;
   outline: none;
   color: #484848;
-  background: #fafafa  no-repeat 90% 50%;
+  background: transparent no-repeat 90% 50%; 
  }
 .sort:focus {
   border: 1px solid rgb(41, 126, 113);

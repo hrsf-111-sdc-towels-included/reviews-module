@@ -12,7 +12,7 @@ class CommentsBlock extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
+    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         const commentsArray = [];
         for (let i = 0; i < res.data.length; i += 1) {

@@ -47,7 +47,7 @@ class IndependentReviews extends React.Component {
       if (index > str.length - 1) return str;
       return str.substr(0, index) + chr + str.substr(index + 1);
     };
-    Axios.get(`Http://localhost:3004/Api/reviews/${this.state.homeId}`)
+    Axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
       .then((res) => {
         let independentAccuracy = 0;
         let independentLocation = 0;
