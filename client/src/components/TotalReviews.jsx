@@ -8,7 +8,7 @@ class TotalReviews extends React.Component {
     this.state = {
       reviewsTotal: 1,
       rating: 0,
-      homeId: this.props.homeId,
+      homeId: props.homeId,
     };
   }
 

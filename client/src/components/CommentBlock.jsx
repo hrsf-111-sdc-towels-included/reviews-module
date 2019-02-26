@@ -10,7 +10,7 @@ class CommentBlock extends React.Component {
       authorPic: [],
       reviews: [],
       date: [],
-      homeId: this.props.homeId,
+      homeId: props.homeId
     };
   }
 
@@ -27,15 +27,18 @@ class CommentBlock extends React.Component {
           reviews: reviewsArray,
           date: dateArray,
         });
+        console.log('I think I at least got here')
       });
-    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.comdock/Api/author/${this.state.homeId}`)
+    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/author/${this.state.homeId}`)
       .then((res) => {
+        console.log('did I get here?')
         const authorNameArray = [];
         const authorPicArray = [];
         for (let i = 0; i < res.data.length; i += 1) {
           authorNameArray.push(res.data[i].name);
           authorPicArray.push(res.data[i].img_url);
         }
+        console.log('how about here')
         this.setState({
           authorName: authorNameArray,
           authorPic: authorPicArray,
@@ -50,23 +53,28 @@ class CommentBlock extends React.Component {
     const y = desiredDate.getFullYear();
     return (
       <div>
-        <div className="commentTop">
-          <div className="leftItems">
-            <div className="picContainer">
-              <img className="profilePic" src={this.state.authorPic[0]} alt="" />
+      {
+          this.state.reviews[0] &&
+          <div>
+            <div className="commentTop">
+              <div className="leftItems">
+                <div className="picContainer">
+                  <img className="profilePic" src={this.state.authorPic[0]} alt="" />
+                </div>
+                <div className="commentInfoContainer">
+                  <div className="authorName">{this.state.authorName[0]}</div>
+                  <div className="dateCss">{month[m - 1]} {y}</div>
+                </div>
+              </div>
+              <div className="rightItems">
+                <Flag />
+              </div>
             </div>
-            <div className="commentInfoContainer">
-              <div className="authorName">{this.state.authorName[0]}</div>
-              <div className="dateCss">{month[m - 1]} {y}</div>
+            <div className="comment">
+              <div>{this.state.reviews[0]}</div>
             </div>
           </div>
-          <div className="rightItems">
-            <Flag />
-          </div>
-        </div>
-        <div className="comment">
-          <div>{this.state.reviews[0]}</div>
-        </div>
+      }
       </div>
     );
   }

@@ -17,37 +17,39 @@ class App extends React.Component {
       homeId: 0,
     };
   }
-  componentDidMount () {
+  componentDidMount() {
     let paramId;
     if (window.location.href.split('?')[1]) {
-      paramId = window.location.href.split('?')[1];
-     } else {
-      window.location = window.location.href + "?100";
-     }
-    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
-      .then((res) => {
-        this.setState({
-          homeId: paramId,
-        });
-        return res;
-      })
+      paramId = Number(window.location.href.split('?')[1]);
+    } else {
+      paramId = 100;
+    }
+    this.setState({
+      homeId: paramId,
+    });
   }
+
   render() {
     return (
       <div>
-        <div>
-          <TotalReviews homeId={this.state.homeId} />
-        </div>
-        <div>
-          <IndependentReviews homeId={this.state.homeId} />
-        </div>
-        <div className="search-container">
-          <Search />
-          <Order sort={this.props.sort} handleSort={this.handleSort} />
-        </div>
-        <div>
-          <CommentsBlock homeId={this.state.homeId} />
-        </div>
+      {
+        this.state.homeId &&
+          <div>
+            <div>
+              <TotalReviews homeId={this.state.homeId} />
+            </div>
+            <div>
+              <IndependentReviews homeId={this.state.homeId} />
+            </div>
+            <div className="search-container">
+              <Search />
+              <Order sort={this.props.sort} handleSort={this.handleSort} />
+            </div>
+            <div>
+              <CommentsBlock homeId={this.state.homeId} />
+            </div>
+          </div>
+      }
       </div>
     );
   }

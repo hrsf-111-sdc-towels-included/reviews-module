@@ -53,5 +53,5 @@ export default CommentsBlock;
 // const listOfReviews = this.state.comments.map((comment) =>
     //   <div>
     //     <p>{comment}</p>
-    //   </div>
+    //   </div> ssh -i my-ec2-key-pair.pem ec2-user@3.81.120.250
     // );

@@ -38,7 +38,6 @@ class IndependentReviews extends React.Component {
       CheckIn: 0,
       Cleanliness: 0,
       Value: 0,
-      homeId: this.props.homeId
     };
   }
 
@@ -47,7 +46,7 @@ class IndependentReviews extends React.Component {
       if (index > str.length - 1) return str;
       return str.substr(0, index) + chr + str.substr(index + 1);
     };
-    Axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
+    Axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.props.homeId}`)
       .then((res) => {
         let independentAccuracy = 0;
         let independentLocation = 0;
