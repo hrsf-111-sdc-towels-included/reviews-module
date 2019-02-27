@@ -39,6 +39,63 @@ app.get('/api/author/:homeId', (req, res) => {
   });
 });
 
+//
+// ─── CRUD API ───────────────────────────────────────────────────────────────────
+//
+
+app.route('/reviews/:itemID')
+
+//Create
+.post((req, res) => {
+  const { itemID } = req.params;
+  const reviewToPost = req.body;
+  const handleDBResponse = (err, data) => {
+    if (err) res.status(400).end();
+    res.status(201)
+    .send(data)
+    .end();
+  }
+  // send itemID, reviewToPost and handleDBResponse to the database
+})
+
+// Read
+.get((req, res) => {
+  const { itemID } = req.params;
+  const handleDBResponse = (err, data) => {
+    if (err) res.status(404).end();
+    res.status(200)
+    .send(data)
+    .end();
+  }
+  // send itemID, and handleDBResponse to the database
+})
+
+// Update
+.put((req, res) => {
+  const { itemID } = req.params;
+  const reviewToUpdate = req.body;
+  const handleDBResponse = (err, data) => {
+    if (err) res.status(400).end();
+    res.status(200)
+    .send(data)
+    .end();
+  }
+})
+
+// Delete
+.delete((req, res) => {
+  const { itemID } = req.params;
+  const reviewToDelete = req.body;
+  const handleDBResponse = (err, data) => {
+    if (err) res.status(400).end();
+    res.status(200)
+    .end();
+  }
+});
+
+
+// ────────────────────────────────────────────────────────────────────────────────
+
 
 app.listen(Port, () => {
   // eslint-disable-next-line no-console
