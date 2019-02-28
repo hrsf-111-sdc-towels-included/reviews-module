@@ -119,7 +119,7 @@
 > Expected Data On Body:
 ```javascript
 {
-    "review_id": string,
+    "review_id": string, // The ID of the review to delete
 }
 ```
 #### Success 201
