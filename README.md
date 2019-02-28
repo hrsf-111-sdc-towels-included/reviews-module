@@ -20,7 +20,7 @@
 > itemID - Integer
 #### Request
 > Expected Data On Body:
-```json
+```javascript
 {
     "author": { // An object representing the author of a review
       "author_id": integer, // The author's unique identifier
