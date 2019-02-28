@@ -1,45 +1,132 @@
-# Project Name
-
-> Project description
+# TOWELS INCLUDED
+## Reviews API Documentation
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/hrsf-111-sdc-towels-included/amenities-module-master
+  - https://github.com/hrsf-111-sdc-towels-included/booking-module
+  - https://github.com/hrsf-111-sdc-towels-included/photos-module
 
 ## Table of Contents
+1. [Create](#Create)
+1. [Read](#Read)
+1. [Update](#Update)
+1. [Delete](#Delete)
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Some usage instructions
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
-
-## Development
-
-### Running the app
-
-From within the root directory:
-
-```sh
-switch branch to Basic_client/server/webpack
-
-npm install -g webpack
-npm install -g nodemon
-npm install
-
-npm run build,
-npm start
-Go to localhost:3004
+## Create
+#### - POST -
+>`/reviews/<itemID>`
+#### Parameters
+> itemID - Integer
+#### Request
+> Expected Data On Body:
+```json
+{
+    author: {
+      name: string,
+      img_url: string,
+    }
+    review_id: string,
+    author_id: integer,
+    home_id: integer,
+    accuracy: integer,
+    communication: integer,
+    cleanliness: integer,
+    location: integer,
+    check_in: integer,
+    value: integer,
+    complaints: boolean,
+    comment: string,
+    created_at: date
+}
 ```
+#### Success 201
+> No Data Returned
+
+#### Failure 400
+> No Data Returned
+
+## Read
+#### - GET -
+>`/reviews/<itemID>`
+#### Parameters
+> itemID - Integer
+#### Request
+> No Expected Data On Body
+
+#### Success 201
+> Array of objects with these properties:
+```json
+{
+    author: {
+      name: string,
+      img_url: string,
+    }
+    review_id: string,
+    author_id: integer,
+    home_id: integer,
+    accuracy: integer,
+    communication: integer,
+    cleanliness: integer,
+    location: integer,
+    check_in: integer,
+    value: integer,
+    complaints: boolean,
+    comment: string,
+    created_at: date
+}
+```
+
+#### Failure 400
+> No Data Returned
+
+## Update
+#### - PUT -
+>`/reviews/<itemID>`
+#### Parameters
+> itemID - Integer
+#### Request
+> Expected Data On Body:
+```json
+{
+    author: {
+      name: string,
+      img_url: string,
+    }
+    review_id: string,
+    author_id: integer,
+    home_id: integer,
+    accuracy: integer,
+    communication: integer,
+    cleanliness: integer,
+    location: integer,
+    check_in: integer,
+    value: integer,
+    complaints: boolean,
+    comment: string,
+    created_at: date
+}
+```
+#### Success 201
+> No Data Returned
+
+#### Failure 400
+> No Data Returned
+
+## DELETE
+#### - DELETE -
+>`/reviews/<itemID>`
+#### Parameters
+> itemID - Integer
+#### Request
+> Expected Data On Body:
+```json
+{
+    review_id: string,
+}
+```
+#### Success 201
+> No Data Returned
+
+#### Failure 400
+> No Data Returned
