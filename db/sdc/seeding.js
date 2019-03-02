@@ -81,6 +81,13 @@ writeNTimes(10000000, reviewsGenerator, sdcReviews, 'utf-8', (err) => {
 //   PRIMARY KEY (id),
 //   UNIQUE KEY (username)
 // );
+// CREATE TABLE sdc_reviews (
+//   id int NOT NULL AUTO_INCREMENT,
+//   username varchar(30) NOT NULL,
+//   PRIMARY KEY (id),
+//   UNIQUE KEY (username)
+// );
+//
 // mysqlimport  --ignore-lines=1 --fields-terminated-by=,
 // --columns='username' --local -u root
 // sdc_reviews /Users/johncastberg/Documents/Hack Reactor/hrsf-111/sdc/reviews-module/db/sdc/sdc_users.csv

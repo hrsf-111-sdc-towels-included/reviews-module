@@ -15,10 +15,6 @@ module.exports = client;
 
 // const client = createClient((err) => {
 //   if (err) throw new Error(err);
-//   client.listBuckets({}, (err, buckets) => {
-//     if (err) return new Error(err);
-//     // console.log(buckets);
-//   });
 //   client.storeValue({
 //     bucket: 'this-is-a-test-bucket',
 //     key: 'my-test-key',
