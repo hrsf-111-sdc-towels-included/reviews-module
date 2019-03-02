@@ -12,19 +12,6 @@ const usernameGenerator = () => {
 };
 usernameGenerator.schema = 'username\n';
 
-//       fakeReview = {
-//         home_id: i,
-//         accuracy: faker.random.number({ min: 1, max: 5 }),
-//         communication: faker.random.number({ min: 1, max: 5 }),
-//         cleanliness: faker.random.number({ min: 1, max: 5 }),
-//         location: faker.random.number({ min: 1, max: 5 }),
-//         check_in: faker.random.number({ min: 1, max: 5 }),
-//         value: faker.random.number({ min: 1, max: 5 }),
-//         complaints: faker.random.boolean(),
-//         comment: faker.lorem.sentences(),
-//         created_at: faker.date.past(2, new Date()),
-//       };
-
 const reviewsGenerator = (current) => {
   let reviews = '';
   const amountOfReviews = faker.random.number({ min: 10, max: 20 });
@@ -87,34 +74,6 @@ writeNTimes(10000000, reviewsGenerator, sdcReviews, 'utf-8', (err) => {
   if (err) throw new Error(err);
   console.log('Write operation complete!');
 });
-
-// const reviewsGenerator = () => {
-//   const fakeReviews = [];
-//   let fakeReview;
-//   const startTimer = new Date();
-//   for (let i = 0; i < 100; i += 1) {
-//     for (let j = 0; j < 5; j += 1) {
-//       fakeReview = {
-//         author_name: faker.name.findName(),
-//         image_url: faker.image.avatar(),
-//         home_id: i,
-//         accuracy: faker.random.number({ min: 1, max: 5 }),
-//         communication: faker.random.number({ min: 1, max: 5 }),
-//         cleanliness: faker.random.number({ min: 1, max: 5 }),
-//         location: faker.random.number({ min: 1, max: 5 }),
-//         check_in: faker.random.number({ min: 1, max: 5 }),
-//         value: faker.random.number({ min: 1, max: 5 }),
-//         complaints: faker.random.boolean(),
-//         comment: faker.lorem.sentences(),
-//         created_at: faker.date.past(2, new Date()),
-//       };
-//       fakeReviews.push(fakeReview);
-//     }
-//   }
-//   const endTimer = new Date();
-//   console.log(`Data generated in ${endTimer - startTimer}ms`);
-//   return fakeReviews;
-// };
 
 // CREATE TABLE sdc_users (
 //   id int NOT NULL AUTO_INCREMENT,
