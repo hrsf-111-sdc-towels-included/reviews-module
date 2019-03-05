@@ -8,6 +8,7 @@ module.exports.reviewsGenerator = (current) => {
     reviews.push({
       homeID: current,
       username: faker.image.avatar().slice(47, -8),
+      // ^^ complete url is "https://s3.amazonaws.com/uifaces/faces/twitter/<username>/128.jpg"
       accuracy: faker.random.number({ min: 1, max: 5 }),
       communication: faker.random.number({ min: 1, max: 5 }),
       cleanliness: faker.random.number({ min: 1, max: 5 }),
