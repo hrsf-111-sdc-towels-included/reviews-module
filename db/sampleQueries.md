@@ -42,30 +42,30 @@ SELECT sdc_reviews.id sdc_users.username, accuracy, communication, cleanliness, 
 ```javascript
 [
 	{
-    "id": 12345
-		"username" : "magoo04",
-		"accuracy" : 3,
-		"communication" : 4,
-		"cleanliness" : 1,
-		"location" : 3,
-		"check_in" : 2,
-		"value" : 3,
-		"complaints" : 4,
-		"comment" : "This is a sample comment",
-		"created_at" : "2018-07-09"
+    id: 12345,
+		username: 'magoo04',
+		accuracy: 3,
+		communication: 4,
+		cleanliness: 1,
+		location: 3,
+		check_in: 2,
+		value: 3,
+		complaints: 4,
+		comment: 'This is a sample comment',
+		created_at: '2018-07-09'
 	},
 	{
-    "id": 12346
-		"username" : "salleedesign",
-		"accuracy" : 1,
-		"communication" : 1,
-		"cleanliness" : 3,
-		"location" : 4,
-		"check_in" : 4,
-		"value" : 5,
-		"complaints" : 1,
-		"comment" : "Nisi culpa et excepturi. Numquam enim quo fugiat. Accusamus ad accusantium tempore sequi sint veniam et aliquid. Nesciunt eligendi saepe laudantium ea. Quibusdam enim repellendus possimus officiis cumque minus laborum.",
-		"created_at" : "2018-06-24"
+    id: 12346,
+		username: 'salleedesign',
+		accuracy: 1,
+		communication: 1,
+		cleanliness: 3,
+		location: 4,
+		check_in: 4,
+		value: 5,
+		complaints: 1,
+		comment: 'Nisi culpa et excepturi. Numquam enim quo fugiat. Accusamus ad accusantium tempore sequi sint veniam et aliquid. Nesciunt eligendi saepe laudantium ea. Quibusdam enim repellendus possimus officiis cumque minus laborum.',
+		created_at: '2018-06-24'
   },
   ...
 ]
@@ -115,4 +115,44 @@ riakClient.fetchValue({
   },
   ...
 ]
+```
+
+## Update a Review
+#### MySql
+##### Query:
+```sql
+UPDATE sdc_reviews SET comment = 'I changed my mind, I actually had a good time' WHERE id = '150002974';
+```
+#### Riak
+##### Query:
+```javascript
+const updatedReview = { updatedField: 'updated' }
+const options = { bucket: 'sdc_reviews', key: '100' }
+riakClient.fetchValue(options, (err, rslt) => {
+    if (err) throw new Error(err);
+    const fetchedObj = rslt.values.shift();
+    fetchedObj.setValue(updatedReview);
+    options.value = fetchedObj;
+    options.returnBody = true;
+    riakClient.storeValue(options, (err) => {
+        if (err) throw new Error(err);
+        delete options.value;
+        delete options.returnBody;
+    });
+});
+```
+
+## Delete a Review
+#### MySql
+##### Query:
+```sql
+DELETE FROM sdc_reviews WHERE id = '150002974';
+```
+#### Riak
+##### Query:
+```javascript
+options = { bucket: 'sdc_users', key: '123' };
+client.deleteValue(options, (err, rslt) => {
+    if (err) throw new Error(err);
+});
 ```
