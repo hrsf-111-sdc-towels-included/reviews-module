@@ -24,4 +24,7 @@ coverage
 /config
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 
+# Generated Data
+*.csv
+
 
