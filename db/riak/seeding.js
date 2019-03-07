@@ -49,9 +49,9 @@ const writeToRiakNTimes = (writeOptions, callback) => {
 const start = new Date();
 writeToRiakNTimes({
   dataGenerator: helpers.reviewsGenerator,
-  bucket: 'this-is-a-test-bucket',
-  batchSize: 10,
-  totalToWrite: 100,
+  bucket: 'sdc_reviews',
+  batchSize: 1000,
+  totalToWrite: 10000000,
 }, (err) => {
   if (err) throw new Error(err);
   const end = new Date();
@@ -60,7 +60,7 @@ writeToRiakNTimes({
 
 // riakClient.fetchValue({
 //   bucket: 'this-is-a-test-bucket',
-//   key: '10',
+//   key: '10000000',
 //   convertToJs: true,
 // }, (err, data) => {
 //   if (err) return new Error(err);

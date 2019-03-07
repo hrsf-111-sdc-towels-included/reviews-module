@@ -15,7 +15,7 @@ module.exports.reviewsGenerator = (current) => {
       location: faker.random.number({ min: 1, max: 5 }),
       checkIn: faker.random.number({ min: 1, max: 5 }),
       value: faker.random.number({ min: 1, max: 5 }),
-      complaints: faker.random.number({ min: 0, max: 1 }),
+      complaints: faker.random.boolean(),
       comment: faker.lorem.sentences(),
       createdAt: moment(faker.date.past(2, new Date())).format('YYYY-MM-DD'),
     });
