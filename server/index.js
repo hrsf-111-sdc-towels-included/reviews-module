@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const morgan = require('morgan');
+const cors = require('cors');
 const riakConnection = require('../db/riak/index.js');
 
 const app = express();
@@ -8,12 +10,8 @@ const Port = 3004;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
-});
+app.use(morgan('tiny'));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
