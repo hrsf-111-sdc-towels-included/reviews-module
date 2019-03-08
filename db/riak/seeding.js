@@ -35,6 +35,7 @@ const writeToRiakNTimes = (writeOptions, callback) => {
     async.parallel(asyncFunctions, (err) => {
       if (err) throw new Error(err);
       // Reset the current value on writeOptions
+      console.log(`Wrote up to ${currentValue - 1}`)
       writeOptions.currentValue = currentValue;
       writeToRiakNTimes(writeOptions, callback);
     });
@@ -48,8 +49,8 @@ const start = new Date();
 writeToRiakNTimes({
   dataGenerator: helpers.reviewsGenerator,
   bucket: 'sdc_reviews',
-  batchSize: 1,
-  totalToWrite: 1,
+  batchSize: 1000,
+  totalToWrite: 10000000,
 }, (err) => {
   if (err) throw new Error(err);
   const end = new Date();
