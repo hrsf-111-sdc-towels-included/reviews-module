@@ -21,7 +21,7 @@ connection.postReview = (req, res) => {
     if (riakRes.isNotFound) {
       const riakObj = new Riak.Commands.KV.RiakObject();
       riakObj.setContentType('application/json');
-      riakObj.setValue(reviewToPost);
+      riakObj.setValue([reviewToPost]);
       options.value = riakObj;
     } else {
       reviewsToUpdate = JSON.parse(riakRes.values[0].value);
