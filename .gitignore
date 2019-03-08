@@ -29,3 +29,4 @@ coverage
 
 # Debugger Config
 .vscode
+launch.json
