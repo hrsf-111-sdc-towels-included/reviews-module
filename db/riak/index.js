@@ -48,15 +48,9 @@ connection.getReviews = (req, res) => {
   connection.fetchValue(options, (err, riakRes) => {
     if (err) return new Error(err);
     if (riakRes.isNotFound) res.status(404).end();
-    const sortedReviews = riakRes.values[0].value
-      .sort((a, b) => {
-        const dashRegex = new RegExp('-', 'g');
-        const aNumber = Number(a.createdAt.replace(dashRegex, ''));
-        const bNumber = Number(b.createdAt.replace(dashRegex, ''));
-        return aNumber - bNumber;
-      });
-    res.status(201)
-      .send(sortedReviews)
+    const reviews = riakRes.values[0].value
+    res.status(200)
+      .send(reviews)
       .end();
   });
 }
