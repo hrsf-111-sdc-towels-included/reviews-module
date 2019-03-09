@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const cors = require('cors');
 const riakConnection = require('../db/riak/index.js');
 require('newrelic');
@@ -11,7 +11,6 @@ const Port = 3004;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(morgan('tiny'));
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, '/../client/dist')));
