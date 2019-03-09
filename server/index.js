@@ -31,16 +31,7 @@ app.route('/reviews/:homeID')
   .put(riakConnection.updateReview)
 
   // Delete
-  .delete((req, res) => {
-    const { itemID } = req.params;
-    const reviewToDelete = req.body;
-    console.log(`DELETE req received -- item id is ${itemID}, review to delete is ${JSON.stringify(reviewToDelete)}`);
-    const handleDBResponse = (err) => {
-      if (err) res.status(400).end();
-      res.status(200)
-        .end();
-    };
-  });
+  .delete(riakConnection.deleteReview);
 
 
 // ────────────────────────────────────────────────────────────────────────────────
