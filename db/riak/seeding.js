@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-loop-func */
 const async = require('async');
-
+const Riak = require('basho-riak-client');
 const riakClient = require('./index.js');
 const helpers = require('./helpers.js');
 
@@ -19,16 +19,14 @@ const writeToRiakNTimes = (writeOptions, callback) => {
 
   // Used IIFE here to maintain unique scopes for each iteration
   for (currentValue; currentValue <= currentBatch; currentValue += 1) ((currentValue) => {
+    const value = new Riak.Commands.KV.RiakObject();
+    value.setContentType('application/json');
+    value.setValue(dataGenerator(currentValue));
     const key = currentValue.toString();
-    const value = dataGenerator(currentValue); // { thisIsATest: '1626' };
     const options = { bucket, key, value };
 
     asyncFunctions.push((asyncCB) => {
       riakClient.storeValue(options, err => asyncCB(err));
-      // setTimeout(() => {
-      //   console.log(JSON.stringify(options.value));
-      //   asyncCB(null);
-      // });
     });
   })(currentValue);
 
@@ -37,6 +35,7 @@ const writeToRiakNTimes = (writeOptions, callback) => {
     async.parallel(asyncFunctions, (err) => {
       if (err) throw new Error(err);
       // Reset the current value on writeOptions
+      console.log(`Wrote up to ${currentValue - 1}`)
       writeOptions.currentValue = currentValue;
       writeToRiakNTimes(writeOptions, callback);
     });
