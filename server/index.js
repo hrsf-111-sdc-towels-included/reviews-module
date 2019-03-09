@@ -4,6 +4,7 @@ const path = require('path');
 const morgan = require('morgan');
 const cors = require('cors');
 const riakConnection = require('../db/riak/index.js');
+require('newrelic');
 
 const app = express();
 const Port = 3004;
