@@ -1,0 +1,27 @@
+config:
+  target: "http://localhost:3004"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+  processor: "./artilleryDataGenerator.js"
+scenarios:
+- name: "Post a review"
+  flow:
+    - function: "generateReview"
+    - post:
+        url: "/reviews/{{ homeID }}"
+        json:
+          createdAt: "{{ createdAt }}"
+          homeID: "{{ homeID }}"
+          reviewID: "{{ reviewID }}"
+          username: "{{ username }}"
+          accuracy: "{{ accuracy }}"
+          communication: "{{ communication }}"
+          cleanliness: "{{ cleanliness }}"
+          location: "{{ location }}"
+          checkIn: "{{ checkIn }}"
+          value: "{{ value }}"
+          complaints: "{{ complaints }}"
+          comment: "{{ comment }}"
+    - log: "Review posted was at home id: {{ homeID }}, reviewID: {{ reviewID }}"
+
