@@ -28,17 +28,7 @@ app.route('/reviews/:homeID')
   .get(riakConnection.getReviews)
 
   // Update
-  .put((req, res) => {
-    const { itemID } = req.params;
-    const reviewToUpdate = req.body;
-    console.log(`PUT req received -- item id is ${itemID}, review to update is ${JSON.stringify(reviewToUpdate)}`);
-    const handleDBResponse = (err, data) => {
-      if (err) res.status(400).end();
-      res.status(200)
-        .send(data)
-        .end();
-    };
-  })
+  .put(riakConnection.updateReview)
 
   // Delete
   .delete((req, res) => {

@@ -55,18 +55,37 @@ connection.getReviews = (req, res) => {
   });
 }
 
-//   // Update
-//   .put((req, res) => {
-//     const { itemID } = req.params;
-//     const reviewToUpdate = req.body;
-//     console.log(`PUT req received -- item id is ${itemID}, review to update is ${JSON.stringify(reviewToUpdate)}`);
-//     const handleDBResponse = (err, data) => {
-//       if (err) res.status(400).end();
-//       res.status(200)
-//         .send(data)
-//         .end();
-//     };
-//   })
+// Update
+connection.updateReview = (req, res) => {
+  const { homeID } = req.params;
+  const updatedReview = req.body;
+  const options = { bucket: 'sdc_reviews', key: homeID };
+  connection.fetchValue(options, (err, riakRes) => {
+    if (err) throw new Error(err);
+    if (riakRes.isNotFound) return res.status(404).end();
+    const riakObj = riakRes.values[0];
+    const reviewsList = JSON.parse(riakObj.value.toString());
+    const reviewToUpdate = reviewsList.find((review) => {
+      return review.reviewID === updatedReview.reviewID;
+    });
+    for (let key in updatedReview) {
+      reviewToUpdate[key] = updatedReview[key];
+    }
+    riakObj.setValue(reviewsList);
+    options.value = riakObj;
+    connection.storeValue(options, (err) => {
+      if (err) {
+        res.status(400).end();
+        throw new Error(err);
+      }
+      res.status(201).end();
+    });
+  });
+}
+
+connection.deleteReview = (req, res) => {
+  
+}
 
 //   // Delete
 //   .delete((req, res) => {
