@@ -2,7 +2,7 @@ config:
   target: "http://localhost:3004"
   phases:
     - duration: 60
-      arrivalRate: 10
+      arrivalRate: 1000
   processor: "./artilleryDataGenerator.js"
 scenarios:
 - name: "Post a review"
@@ -23,5 +23,4 @@ scenarios:
           value: "{{ value }}"
           complaints: "{{ complaints }}"
           comment: "{{ comment }}"
-    - log: "Review posted was at home id: {{ homeID }}, reviewID: {{ reviewID }}"
 
