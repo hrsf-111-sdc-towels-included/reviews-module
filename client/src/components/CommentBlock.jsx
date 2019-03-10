@@ -15,7 +15,7 @@ class CommentBlock extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/reviews/${this.state.homeId}`)
+    axios.get(`http://localhost:3000/reviews/${this.state.homeId}`)
       .then((res) => {
         const reviewsArray = [];
         const dateArray = [];
@@ -28,7 +28,7 @@ class CommentBlock extends React.Component {
           date: dateArray,
         });
       });
-    axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/author/${this.state.homeId}`)
+    axios.get(`/reviews/${this.state.homeId}`)
       .then((res) => {
         const authorNameArray = [];
         const authorPicArray = [];
