@@ -27,18 +27,15 @@ class CommentBlock extends React.Component {
           reviews: reviewsArray,
           date: dateArray,
         });
-        console.log('I think I at least got here')
       });
     axios.get(`http://ec2-3-81-120-250.compute-1.amazonaws.com/Api/author/${this.state.homeId}`)
       .then((res) => {
-        console.log('did I get here?')
         const authorNameArray = [];
         const authorPicArray = [];
         for (let i = 0; i < res.data.length; i += 1) {
           authorNameArray.push(res.data[i].name);
           authorPicArray.push(res.data[i].img_url);
         }
-        console.log('how about here')
         this.setState({
           authorName: authorNameArray,
           authorPic: authorPicArray,

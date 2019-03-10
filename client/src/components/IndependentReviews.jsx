@@ -86,7 +86,9 @@ class IndependentReviews extends React.Component {
         }
         return res;
       })
-      .catch(console.log('there was an error'));
+      .catch((err) => {
+        return new Error(err);
+      });
   }
 
   render() {
