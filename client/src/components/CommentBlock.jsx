@@ -15,7 +15,7 @@ class CommentBlock extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3000/reviews/${this.state.homeId}`)
+    axios.get(`/reviews/${this.state.homeId}`)
       .then((res) => {
         const reviewsArray = [];
         const dateArray = [];
