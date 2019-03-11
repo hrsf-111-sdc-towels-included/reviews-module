@@ -1,6 +1,6 @@
 const Riak = require('basho-riak-client');
 
-const riakNodes = ['localhost:8087'];
+const riakNodes = ['3.17.157.240:8087'];
 
 const createClient = (cb) => {
   return new Riak.Client(riakNodes, cb);
