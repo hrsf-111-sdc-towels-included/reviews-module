@@ -47,7 +47,7 @@ connection.getReviews = (req, res) => {
   }
   connection.fetchValue(options, (err, riakRes) => {
     if (err) return new Error(err);
-    if (riakRes.isNotFound) res.status(404).end();
+    if (riakRes.isNotFound) return res.status(404).end();
     const reviews = riakRes.values[0].value
     res.status(200)
       .send(reviews)
