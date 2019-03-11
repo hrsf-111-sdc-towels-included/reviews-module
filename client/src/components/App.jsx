@@ -22,7 +22,7 @@ class App extends React.Component {
     if (window.location.href.split('?')[1]) {
       paramId = Number(window.location.href.split('?')[1]);
     } else {
-      paramId = 100;
+      paramId = 1;
     }
     this.setState({
       homeId: paramId,
