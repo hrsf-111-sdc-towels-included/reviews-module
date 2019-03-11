@@ -5,7 +5,7 @@ const cors = require('cors');
 const riakConnection = require('../db/riak/index.js');
 
 const app = express();
-const Port = 3004;
+const Port = 80;
 
 app.use(express.json());
 app.use(cors());
