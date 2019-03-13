@@ -9,8 +9,11 @@ const writeToRiakNTimes = (writeOptions, callback) => {
   if (!writeOptions.currentValue) {
     writeOptions.currentValue = 1;
   }
+  if (!writeOptions.waitBetweenBatchWrites) {
+    writeOptions.waitBetweenBatchWrites = 0;
+  }
   let { currentValue } = writeOptions;
-  const { dataGenerator, bucket, batchSize, totalToWrite } = writeOptions;
+  const { dataGenerator, bucket, batchSize, totalToWrite, waitBetweenBatchWrites } = writeOptions;
   const currentBatch = currentValue + (batchSize - 1);
   const asyncFunctions = [];
 
@@ -33,11 +36,19 @@ const writeToRiakNTimes = (writeOptions, callback) => {
   // Loop will eventually set current value to totalToWrite plus one
   if (currentValue !== totalToWrite + 1) {
     async.parallel(asyncFunctions, (err) => {
-      if (err) throw new Error(err);
+      if (err) {
+        console.error(new Error(err));
+        writeOptions.currentValue = currentValue - batchSize;
+        return setTimeout(() => {
+          writeToRiakNTimes(writeOptions, callback);
+        }, 10000);
+      }
       // Reset the current value on writeOptions
       console.log(`Wrote up to ${currentValue - 1}`)
       writeOptions.currentValue = currentValue;
-      writeToRiakNTimes(writeOptions, callback);
+      setTimeout(() => {
+        writeToRiakNTimes(writeOptions, callback);
+      }, waitBetweenBatchWrites);
     });
   } else {
     // Last write!!
@@ -51,6 +62,7 @@ writeToRiakNTimes({
   bucket: 'sdc_reviews',
   batchSize: 1000,
   totalToWrite: 10000000,
+  waitBetweenBatchWrites: 100
 }, (err) => {
   if (err) throw new Error(err);
   const end = new Date();
