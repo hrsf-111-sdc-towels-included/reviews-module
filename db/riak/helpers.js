@@ -22,7 +22,7 @@ module.exports.uuid = (
 
 module.exports.reviewsGenerator = (current) => {
   const reviews = [];
-  const amountOfReviews = faker.random.number({ min: 10, max: 20 });
+  const amountOfReviews = faker.random.number({ min: 7, max: 15 });
   for (let i = 0; i < amountOfReviews; i += 1) {
     const createdAt = moment(faker.date.past(2, new Date())).format('YYYY-MM-DD');
     reviews.push({
