@@ -5,18 +5,18 @@ const riakNodes = ['18.218.97.177:8087', '18.224.70.49:8087', '18.191.238.41:808
 const createClient = (cb) => {
   return new Riak.Client(riakNodes, cb);
 };
-const connection = createClient((err) => {
+const riakConnection = createClient((err) => {
   if (err) throw new Error(err);
   console.log(`Connected to Riak at: ${riakNodes.toString()}`);
 });
 
 // Create
-connection.postReview = (req, res) => {
+riakConnection.postReview = (req, res) => {
   const { homeID } = req.params;
   const reviewToPost = req.body;
   const options = { bucket: 'sdc_reviews', key: homeID };
 
-  connection.fetchValue(options, (err, riakRes) => {
+  riakConnection.fetchValue(options, (err, riakRes) => {
     if (err) throw new Error(err);
     if (riakRes.isNotFound) {
       const riakObj = new Riak.Commands.KV.RiakObject();
@@ -28,7 +28,7 @@ connection.postReview = (req, res) => {
       reviewsToUpdate.push(reviewToPost);
       options.value = reviewsToUpdate;
     }
-    connection.storeValue(options, (err, riakRes) => {
+    riakConnection.storeValue(options, (err, riakRes) => {
       if (err) throw new Error(err);
       res.status(201)
       .send(JSON.stringify(riakRes))
@@ -38,14 +38,14 @@ connection.postReview = (req, res) => {
 }
 
 // Read
-connection.getReviews = (req, res) => {
+riakConnection.getReviews = (req, res) => {
   const { homeID } = req.params;
   const options = {
     bucket: 'sdc_reviews',
     key: homeID,
     convertToJs: true,
   }
-  connection.fetchValue(options, (err, riakRes) => {
+  riakConnection.fetchValue(options, (err, riakRes) => {
     if (err) return new Error(err);
     if (riakRes.isNotFound) return res.status(404).end();
     const reviews = riakRes.values[0].value
@@ -56,11 +56,11 @@ connection.getReviews = (req, res) => {
 }
 
 // Update
-connection.updateReview = (req, res) => {
+riakConnection.updateReview = (req, res) => {
   const { homeID } = req.params;
   const updatedReview = req.body;
   const options = { bucket: 'sdc_reviews', key: homeID };
-  connection.fetchValue(options, (err, riakRes) => {
+  riakConnection.fetchValue(options, (err, riakRes) => {
     if (err) throw new Error(err);
     if (riakRes.isNotFound) return res.status(404).end();
     const riakObj = riakRes.values[0];
@@ -73,7 +73,7 @@ connection.updateReview = (req, res) => {
     }
     riakObj.setValue(reviewsList);
     options.value = riakObj;
-    connection.storeValue(options, (err) => {
+    riakConnection.storeValue(options, (err) => {
       if (err) {
         res.status(400).end();
         throw new Error(err);
@@ -84,11 +84,11 @@ connection.updateReview = (req, res) => {
 }
 
 // Delete
-connection.deleteReview = (req, res) => {
+riakConnection.deleteReview = (req, res) => {
   const { homeID } = req.params;
   const reviewToDelete = req.body.reviewID;
   const options = { bucket: 'sdc_reviews', key: homeID };
-  connection.fetchValue(options, (err, riakRes) => {
+  riakConnection.fetchValue(options, (err, riakRes) => {
     if (err) throw new Error(err);
     if (riakRes.isNotFound) return res.status(404).end();
     const riakObj = riakRes.values[0];
@@ -100,7 +100,7 @@ connection.deleteReview = (req, res) => {
     reviewsList.splice(idxOfReviewToDelete, 1);
     riakObj.setValue(reviewsList);
     options.value = riakObj;
-    connection.storeValue(options, (err) => {
+    riakConnection.storeValue(options, (err) => {
       if (err) {
         res.status(400).end();
         throw new Error(err);
@@ -110,4 +110,4 @@ connection.deleteReview = (req, res) => {
   });
 }
 
-module.exports = connection;
+module.exports = riakConnection;
