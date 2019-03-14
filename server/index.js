@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const riakConnection = require('../db/riak/index.js');
+const { getReviews } = require('../db/endpointHandlers.js');
 
 const app = express();
 const Port = 80;
@@ -22,7 +23,7 @@ app.route('/reviews/:homeID')
   .post(riakConnection.postReview)
 
   // Read
-  .get(riakConnection.getReviews)
+  .get(getReviews)
 
   // Update
   .put(riakConnection.updateReview)
