@@ -3,6 +3,8 @@
 
 ## Related Projects
 
+  - [Proxy Server That Connects All Services](https://github.com/hrsf-111-sdc-towels-included/reviews-proxy-server)
+
   - https://github.com/hrsf-111-sdc-towels-included/amenities-module-master
   - https://github.com/hrsf-111-sdc-towels-included/booking-module
   - https://github.com/hrsf-111-sdc-towels-included/photos-module
